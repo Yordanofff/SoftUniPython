@@ -35,10 +35,3 @@ students = int(input())
 days = int(input())
 
 school_camp_app(season, sex, students, days)
-
-school_camp_app("Spring", "girls", 20, 7)
-school_camp_app("Spring", "mixed", 17, 14)
-school_camp_app("Summer", "boys", 60, 7)
-school_camp_app("Winter", "mixed", 9, 15)
-
-# todo - 1 case not working...
