@@ -5,7 +5,7 @@ def bike(num_jun, num_sen, trace):
     total_num = num_sen + num_jun
 
     discount = 0
-    if total_num >= 50:
+    if total_num >= 50 and trace == "cross-country":
         discount = 0.25
 
     money = num_jun * juniors[trace] + num_sen * seniors[trace]
@@ -23,7 +23,3 @@ num_seniors = int(input())
 trace_type = input()
 
 bike(num_juniors, num_seniors, trace_type)
-
-
-# bike(10, 20, "trail")
-# bike(21, 26, "cross-country")

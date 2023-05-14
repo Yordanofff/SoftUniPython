@@ -10,7 +10,7 @@ def school_camp_app(season, sex, num_students, days_stay):
         discount = 0
     elif num_students <= 19:
         discount = 0.05
-    elif num_students <= 50:
+    elif num_students < 50:
         discount = 0.15
     else:
         discount = 0.5
@@ -29,12 +29,12 @@ def school_camp_app(season, sex, num_students, days_stay):
     print(f"{sport} {price:.2f} lv.")
 
 
-# season = input()
-# sex = input()
-# students = int(input())
-# days = int(input())
-#
-# school_camp_app(season, sex, students, days)
+season = input()
+sex = input()
+students = int(input())
+days = int(input())
+
+school_camp_app(season, sex, students, days)
 
 school_camp_app("Spring", "girls", 20, 7)
 school_camp_app("Spring", "mixed", 17, 14)
