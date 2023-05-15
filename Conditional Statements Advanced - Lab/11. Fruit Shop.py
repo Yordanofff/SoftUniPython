@@ -1,23 +1,26 @@
-weekday_prices = [2.50, 1.20, 0.85, 1.45, 2.70, 5.50, 3.85]
-weekend_prices = [2.70, 1.25, 0.90, 1.60, 3.00, 5.60, 4.20]
-fruits = ["banana", "apple", "orange", "grapefruit", "kiwi", "pineapple", "grapes"]
+def get_shop_msg(fruit, week_day, quantity):
+    weekday_prices = {"banana": 2.50, "apple": 1.20, "orange": 0.85, "grapefruit": 1.45, "kiwi": 2.70,
+                      "pineapple": 5.50,
+                      "grapes": 3.85}
 
-working_days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
-weekend_days = ["Saturday", "Sunday"]
+    weekend_prices = {"banana": 2.70, "apple": 1.25, "orange": 0.90, "grapefruit": 1.60, "kiwi": 3.00,
+                      "pineapple": 5.60,
+                      "grapes": 4.20}
+
+    working_days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+    weekend_days = ["Saturday", "Sunday"]
+
+    if fruit not in weekday_prices:
+        return "error"
+
+    if week_day in weekend_days:
+        return f"{quantity * weekend_prices[fruit]:.2f}"
+    elif week_day in working_days:
+        return f"{quantity * weekday_prices[fruit]:.2f}"
+    return "error"
 
 fruit = input()
 week_day = input()
 quantity = float(input())
 
-if fruit in fruits:
-    fruit_index = fruits.index(fruit)
-else:
-    print("error")
-    exit(1)
-
-if week_day in working_days:
-    print(f"{quantity * weekday_prices[fruit_index]:.2f}")
-elif week_day in weekend_days:
-    print(f"{quantity * weekend_prices[fruit_index]:.2f}")
-else:
-    print("error")
+print(get_shop_msg(fruit, week_day, quantity))
